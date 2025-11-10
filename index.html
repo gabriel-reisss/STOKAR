@@ -98,15 +98,16 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <img class="h-10 w-auto" src="https://placehold.co/150x40/003366/FFFFFF?text=STOKAR&font=inter&style=bold" alt="STOKAR Logo">
+                    <a href="http://127.0.0.1:5500/Mock-stokar.html"><img class="h-10 w-auto" src="https://placehold.co/150x40/003366/FFFFFF?text=STOKAR&font=inter&style=bold" alt="STOKAR Logo"></a>
                 </div>
                 
                 <!-- Links Desktop -->
                 <div class="hidden md:flex md:items-center md:space-x-8">
-                    <a href="#" class="text-gray-700 hover:text-stokar-blue font-medium" onclick="showScreen('screen-home')">Como Funciona</a>
-                    <a href="#" class="text-gray-700 hover:text-stokar-blue font-medium">Para Lojas</a>
-                    <a href="#" class="text-gray-700 hover:text-stokar-blue font-medium">Para Entregadores</a>
-                    <a href="#" class="text-gray-700 hover:text-stokar-blue font-medium">Para Pontos de Coleta</a>
+                    <!-- ATUALIZADO: Links de navegação com scroll suave -->
+                    <a href="#secao-perfis" class="text-gray-700 hover:text-stokar-blue font-medium" onclick="smoothScroll(event, 'secao-perfis')">Como Funciona</a>
+                    <a href="#secao-planos" class="text-gray-700 hover:text-stokar-blue font-medium" onclick="smoothScroll(event, 'secao-planos')">Para Lojas</a>
+                    <a href="#secao-perfis" class="text-gray-700 hover:text-stokar-blue font-medium" onclick="smoothScroll(event, 'secao-perfis')">Para Entregadores</a>
+                    <a href="#secao-perfis" class="text-gray-700 hover:text-stokar-blue font-medium" onclick="smoothScroll(event, 'secao-perfis')">Para Pontos de Coleta</a>
                 </div>
                 
                 <!-- Botões Desktop -->
@@ -677,7 +678,8 @@
         </section>
 
         <!-- Seção CTA por Função -->
-        <section class="bg-stokar-gray-light py-24">
+        <!-- ATUALIZADO: Adicionado ID e style de margem para o scroll -->
+        <section id="secao-perfis" class="bg-stokar-gray-light py-24" style="scroll-margin-top: 80px;">
             <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Para quem é a STOKAR?</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -685,27 +687,169 @@
                     <div class="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
                         <svg class="w-12 h-12 text-stokar-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                         <h3 class="text-2xl font-bold text-gray-800 mb-3">Você é uma Loja?</h3>
-                        <p class="text-gray-600 mb-6">Envie seus produtos de forma mais rápida e barata usando nossa rede de estoque e entrega.</p>
+                        <p class="text-gray-600 mb-6">Envie seus produtos de forma mais rápida e barata usando nossa rede. <br> <strong class="text-stokar-blue-dark">Planos a partir de Gratuito.</strong></p>
                         <button onclick="showScreen('screen-cadastro', 'loja')" class="font-semibold text-stokar-blue hover:text-stokar-blue-dark">Quero Enviar Produtos &rarr;</button>
                     </div>
                     <!-- Card Ponto -->
                     <div class="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
                         <svg class="w-12 h-12 text-stokar-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
                         <h3 class="text-2xl font-bold text-gray-800 mb-3">Você tem um Espaço?</h3>
-                        <p class="text-gray-600 mb-6">Transforme seu espaço ocioso em um ponto de coleta e armazenamento. Gere renda extra.</p>
+                        <p class="text-gray-600 mb-6">Transforme seu espaço ocioso em um ponto de coleta. <br> <strong class="text-stokar-blue-dark">Receba R$3 a R$5 por caixa.</strong></p>
                         <button onclick="showScreen('screen-cadastro', 'ponto')" class="font-semibold text-stokar-blue hover:text-stokar-blue-dark">Quero ser um Ponto &rarr;</button>
                     </div>
                     <!-- Card Entregador -->
                     <div class="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
                          <svg class="w-12 h-12 text-stokar-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h8m-3-1a1 1 0 001-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 001 1h1zm7-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2a1 1 0 01-1-1v-4z"></path></svg>
                         <h3 class="text-2xl font-bold text-gray-800 mb-3">Você é Entregador?</h3>
-                        <p class="text-gray-600 mb-6">Otimize suas rotas, colete pacotes em pontos próximos e aumente seus ganhos.</p>
+                        <p class="text-gray-600 mb-6">Otimize suas rotas, colete pacotes e aumente seus ganhos. <br> <strong class="text-stokar-blue-dark">Ganhe R$6 a R$10 por entrega.</strong></p>
                         <button onclick="showScreen('screen-cadastro', 'entregador')" class="font-semibold text-stokar-blue hover:text-stokar-blue-dark">Quero Fazer Entregas &rarr;</button>
                     </div>
                 </div>
             </div>
         </section>
         
+        <!-- 
+          NOVA SEÇÃO DE PLANOS (PARA LOJAS)
+          Inserida com base no PDF
+        -->
+        <!-- ATUALIZADO: Adicionado ID e style de margem para o scroll -->
+        <section id="secao-planos" class="bg-white py-24" style="scroll-margin-top: 80px;">
+            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold text-stokar-blue">Planos para sua Loja</h2>
+                    <p class="mt-4 text-lg text-gray-600">Escolha o plano que se encaixa no volume do seu e-commerce.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-stretch">
+                    
+                    <!-- Plano 1: Start -->
+                    <div class="flex flex-col bg-stokar-gray-light p-8 rounded-xl shadow-lg border border-stokar-gray-medium">
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold text-gray-800">Stokar Start</h3>
+                            <p class="mt-2 text-gray-600">Pequenos e-commerces que estão começando.</p>
+                            <div class="my-6">
+                                <span class="text-4xl font-extrabold text-stokar-blue">Gratuito</span>
+                                <span class="text-gray-600"> (pay-per-use)</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span>Paga apenas por operação</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span>Acesso à rede de hosts e motoristas</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span>Painel básico de controle e rastreio</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button onclick="showScreen('screen-cadastro', 'loja')" class="w-full mt-8 bg-white border border-stokar-blue text-stokar-blue font-semibold px-5 py-3 rounded-lg hover:bg-stokar-gray-light transition duration-200">
+                            Começar Agora
+                        </button>
+                    </div>
+
+                    <!-- Plano 2: Pro (Recomendado) -->
+                    <div class="flex flex-col bg-white p-8 rounded-xl shadow-2xl border-2 border-stokar-blue relative">
+                        <span class="absolute top-0 -translate-y-1/2 bg-stokar-blue text-white text-xs font-bold px-4 py-1 rounded-full uppercase">Recomendado</span>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold text-stokar-blue">Stokar Pro</h3>
+                            <p class="mt-2 text-gray-600">E-commerces com fluxo constante de pedidos.</p>
+                            <div class="my-6">
+                                <span class="text-4xl font-extrabold text-stokar-blue">R$149</span>
+                                <span class="text-gray-600">/mês</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span>Inclui <span class="font-bold">50 transações/mês</span></span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span>Suporte prioritário via chat</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span>Relatórios de desempenho</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span>Integração Shopify/Nuvemshop</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button onclick="showScreen('screen-cadastro', 'loja')" class="w-full mt-8 bg-stokar-blue hover:bg-stokar-blue-dark text-white font-semibold px-5 py-3 rounded-lg shadow-sm transition duration-200">
+                            Escolher Pro
+                        </button>
+                    </div>
+
+                    <!-- Plano 3: Business -->
+                    <div class="flex flex-col bg-stokar-gray-light p-8 rounded-xl shadow-lg border border-stokar-gray-medium">
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold text-gray-800">Stokar Business</h3>
+                            <p class="mt-2 text-gray-600">Lojas com alto volume ou múltiplos centros.</p>
+                            <div class="my-6">
+                                <span class="text-4xl font-extrabold text-stokar-blue">R$399</span>
+                                <span class="text-gray-600">/mês</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span>Inclui <span class="font-bold">150 transações/mês</span></span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span>Dashboard avançado</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span>Gestão de seguro integrada</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span>Consultoria logística</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button onclick="showScreen('screen-cadastro', 'loja')" class="w-full mt-8 bg-white border border-stokar-blue text-stokar-blue font-semibold px-5 py-3 rounded-lg hover:bg-stokar-gray-light transition duration-200">
+                            Escolher Business
+                        </button>
+                    </div>
+                    
+                    <!-- Plano 4: Enterprise -->
+                    <div class="flex flex-col bg-stokar-blue-dark p-8 rounded-xl shadow-lg">
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold text-white">Stokar Enterprise</h3>
+                            <p class="mt-2 text-stokar-gray-light">Grandes redes ou marketplaces regionais.</p>
+                            <div class="my-6">
+                                <span class="text-4xl font-extrabold text-white">Sob Consulta</span>
+                            </div>
+                            <ul class="space-y-3 text-stokar-gray-light">
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-5 h-5 text-stokar-gray-light flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span>Soluções sob medida (API/ERP)</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-5 h-5 text-stokar-gray-light flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span>SLA dedicado e equipe de conta</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-5 h-5 text-stokar-gray-light flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    <span>Suporte técnico 24h</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="w-full mt-8 bg-white text-stokar-blue-dark font-semibold px-5 py-3 rounded-lg hover:bg-stokar-gray-light transition duration-200">
+                            Entre em Contato
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer class="bg-stokar-blue-dark text-white">
             <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
@@ -747,7 +891,7 @@
         <div class="min-h-screen flex items-center justify-center bg-stokar-gray-light py-12 px-4 sm:px-6 lg:px-8">
             <div class="max-w-md w-full space-y-8 bg-white p-10 rounded-xl shadow-lg">
                 <div>
-                    <img class="mx-auto h-12 w-auto" src="https://placehold.co/150x40/003366/FFFFFF?text=STOKAR&font=inter&style=bold" alt="STOKAR Logo">
+                    <a href="http://127.0.0.1:5500/Mock-stokar.html"><img class="mx-auto h-12 w-auto" src="https://placehold.co/150x40/003366/FFFFFF?text=STOKAR&font=inter&style=bold" alt="STOKAR Logo"></a>
                     <h2 class="mt-6 text-center text-3xl font-bold text-gray-800">
                         Acesse sua conta
                     </h2>
@@ -799,7 +943,7 @@
         <div class="min-h-screen flex items-center justify-center bg-stokar-gray-light py-12 px-4 sm:px-6 lg:px-8">
             <div class="max-w-md w-full space-y-8 bg-white p-10 rounded-xl shadow-lg">
                 <div>
-                    <img class="mx-auto h-12 w-auto" src="https://placehold.co/150x40/003366/FFFFFF?text=STOKAR&font=inter&style=bold" alt="STOKAR Logo">
+                    <a href="http://127.0.0.1:5500/Mock-stokar.html"><img class="mx-auto h-12 w-auto" src="https://placehold.co/150x40/003366/FFFFFF?text=STOKAR&font=inter&style=bold" alt="STOKAR Logo"></a>
                     <h2 class="mt-6 text-center text-3xl font-bold text-gray-800">
                         Crie sua conta
                     </h2>
@@ -1031,6 +1175,18 @@
         function goBack() {
             // Isso volta para o conteúdo anterior *dentro* do app
             showContent(lastContentId);
+        }
+
+        // ATUALIZADO: Nova função de scroll suave
+        function smoothScroll(event, targetId) {
+            event.preventDefault();
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
 
         // Inicia o app na tela Home
